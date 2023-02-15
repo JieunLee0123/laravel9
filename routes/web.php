@@ -19,8 +19,11 @@ Route::get('/', function () {
   return view('welcome');
 });
 
-Route::get('/users', [Users::class, 'viewLoad']);
+// Users class
+Route::post('users', [Users::class, 'getUserData']);
+Route::view('signin', 'users');
 
+// Product class
 Route::get('/list', [Products::class, 'productList']);
 Route::get('/add', [Products::class, 'addProduct']);
 Route::get('/update', [Products::class, 'updateProduct']);

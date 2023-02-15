@@ -6,9 +6,8 @@ use Illuminate\Http\Request;
 
 class Users extends Controller
 {
-  function viewLoad()
+  function getUserData(Request $req)
   {
-    $usersData=['Pizza', 'Chocolate', 'Icecream'];
-    return view('users', ['usersData'=>$usersData]);
+    return $req->input();
   }
 }

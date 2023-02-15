@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Blade;
 
 class Products extends Controller
 {
-    //
     function productList() {
         $total = 20;
         return Blade::render('<h1>product list ( {{ $total }} )</h1>', ['total'=>$total]);
