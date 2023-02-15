@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
+use App\Http\Controllers\Products;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +21,7 @@ Route::get('/', function () {
 
 Route::get('/users', [Users::class, 'viewLoad']);
 
-
+Route::get('/list', [Products::class, 'productList']);
+Route::get('/add', [Products::class, 'addProduct']);
+Route::get('/update', [Products::class, 'updateProduct']);
+Route::get('/delete', [Products::class, 'deleteProduct']);
