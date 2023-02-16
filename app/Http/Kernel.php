@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
 class Kernel extends HttpKernel
 {
     /**
-     * The application's global HTTP middleware stack.
+     * The application's global HTTP middleware stack. ( 미들웨어 전역 적용 )
      *
      * These middleware are run during every request to your application.
      *
@@ -15,6 +15,7 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         // \App\Http\Middleware\TrustHosts::class,
+        \App\Http\Middleware\ageCheck::class,
         \App\Http\Middleware\TrustProxies::class,
         \Fruitcake\Cors\HandleCors::class,
         \App\Http\Middleware\PreventRequestsDuringMaintenance::class,
@@ -24,7 +25,7 @@ class Kernel extends HttpKernel
     ];
 
     /**
-     * The application's route middleware groups.
+     * The application's route middleware groups. ( 미들웨어 라우트 그룹 적용 )
      *
      * @var array<string, array<int, class-string|string>>
      */
@@ -47,7 +48,7 @@ class Kernel extends HttpKernel
     ];
 
     /**
-     * The application's route middleware.
+     * The application's route middleware. ( 미들웨어 라우트 적용 )
      *
      * These middleware may be assigned to groups or used individually.
      *
