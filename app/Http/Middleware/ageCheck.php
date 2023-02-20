@@ -20,7 +20,6 @@ class ageCheck
     if( $request->age && $request->age<18 ){
       return redirect('noaccess');
     }
-    echo '<h1>This text from middleware</h1>';
     return $next($request);
   }
 }

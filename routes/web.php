@@ -19,17 +19,7 @@ Route::get('/', function () {
   return view('welcome');
 });
 
-// Product class
-Route::get('/list', [Products::class, 'productList']);
-Route::get('/add', [Products::class, 'addProduct']);
-Route::get('/update', [Products::class, 'updateProduct']);
-Route::get('/delete', [Products::class, 'deleteProduct']);
-
 // 미들웨어 관련
 Route::view('home', 'home');
-//Route::view('users', 'users');
+Route::view('users', 'users')->middleware('protectedPage');
 Route::view('noaccess', 'noaccess');
-
-Route::group(['middleware' => ['protectedPage']], function () {
-  Route::view('users', 'users');
-});
