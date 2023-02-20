@@ -3,15 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class Users extends Controller
 {
-  function getUserData(Request $req)
+  function getUserData()
   {
-    $req->validate([
-      'email'=>'required | max:10',
-      'password'=>'required | min:5',
-    ]);
-    return $req->input();
+    return DB::select('select * from users');
   }
 }

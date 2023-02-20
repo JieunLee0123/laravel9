@@ -19,7 +19,6 @@ Route::get('/', function () {
   return view('welcome');
 });
 
-// 미들웨어 관련
-Route::view('home', 'home');
-Route::view('users', 'users')->middleware('protectedPage');
-Route::view('noaccess', 'noaccess');
+Route::get('/users', [Users::class, 'getUserData']);
+
+
